@@ -9,7 +9,8 @@
     "compression": "^1.6.2",
     "express": "^4.15.2",
     "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "request": "^2.80.0"
   },
   "devDependencies": {
     "babel-watch": "^2.0.6",

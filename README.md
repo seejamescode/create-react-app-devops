@@ -26,7 +26,8 @@ This project was inspired by [Create React PWA](https://github.com/jeffposnick/c
 2) Install on your machine the [Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html), [Node](https://docs.npmjs.com/getting-started/installing-node), and [Yarn](https://yarnpkg.com/lang/en/docs/install/#mac-tab).
 
 3) You will change `create-react-app-devops` to a unique app name on:
-	- [.travis.yml](https://github.com/seejamescode/create-react-app-devops/blob/master/.travis.yml) - Lines 24 and 30. Also, change to your Bluemix email on lines 11 and 12.
+
+	- [.travis.yml](https://github.com/seejamescode/create-react-app-devops/blob/master/.travis.yml) - Lines 24 and 30
 	- [manifest-staging.yml](https://github.com/seejamescode/create-react-app-devops/blob/master/manifest-staging.yml) - Line 3
 	- [manifest.yml](https://github.com/seejamescode/create-react-app-devops/blob/master/manifest.yml) - Line 3
 	- [package.json](https://github.com/seejamescode/create-react-app-devops/blob/master/package.json) - Line 2
@@ -41,7 +42,7 @@ This project was inspired by [Create React PWA](https://github.com/jeffposnick/c
 
 8) Request a new access token from github: https://github.com/settings/tokens/new
 
-9) Set that access token in `keys.json` in the root of your repo:
+9) Set that access token in `keys.json` in the root of your repo. This file is already listed in your `.gitignore`. So no worries about the public stealing your API key:
 ```
 {
   "github": "<your-github-key>"

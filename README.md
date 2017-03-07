@@ -27,10 +27,10 @@ This project was inspired by [Create React PWA](https://github.com/jeffposnick/c
 
 3) You will change `create-react-app-devops` to a unique app name on:
 
-	- [.travis.yml](https://github.com/seejamescode/create-react-app-devops/blob/master/.travis.yml) - Lines 24 and 30
-	- [manifest-staging.yml](https://github.com/seejamescode/create-react-app-devops/blob/master/manifest-staging.yml) - Line 3
-	- [manifest.yml](https://github.com/seejamescode/create-react-app-devops/blob/master/manifest.yml) - Line 3
-	- [package.json](https://github.com/seejamescode/create-react-app-devops/blob/master/package.json) - Line 2
+- [.travis.yml](https://github.com/seejamescode/create-react-app-devops/blob/master/.travis.yml) - Lines 24 and 30
+- [manifest-staging.yml](https://github.com/seejamescode/create-react-app-devops/blob/master/manifest-staging.yml) - Line 3
+- [manifest.yml](https://github.com/seejamescode/create-react-app-devops/blob/master/manifest.yml) - Line 3
+- [package.json](https://github.com/seejamescode/create-react-app-devops/blob/master/package.json) - Line 2
 
 4) Add your Bluemix account email to lines 11 and 12 of [.travis.yml](https://github.com/seejamescode/create-react-app-devops/blob/master/.travis.yml)
 

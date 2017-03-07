@@ -1,6 +1,6 @@
 # Create React App DevOps
 
-See the app live at: http://create-react-app-devops.mybluemix.net/
+See the app live at: https://create-react-app-devops.mybluemix.net/
 
 This is a repo that proves how easily it is to implement automated builds around [Create React App](https://github.com/facebookincubator/create-react-app). In this repo, we do the following (broken up by commits):
 

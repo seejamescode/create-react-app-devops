@@ -21,7 +21,13 @@ before_deploy:
 deploy:
   - edge: true
     provider: script
-    script: if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then cf zero-downtime-push create-react-app-devops -f ./manifest.yml; else echo "PR skip deploy"; fi
+    script: if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then cf zero-downtime-push create-react-app-devops-staging -f ./manifest-staging.yml; else echo "PR skip deploy"; fi
     skip_cleanup: true
     on:
       branch: master
+  - edge: true
+    provider: script
+    script: if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then cf zero-downtime-push create-react-app-devop -f ./manifest.yml; else echo "PR skip deploy"; fi
+    skip_cleanup: true
+    on:
+      tags: true

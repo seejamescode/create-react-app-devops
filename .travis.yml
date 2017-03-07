@@ -1,0 +1,27 @@
+sudo: true
+language: node_js
+node_js:
+- '5.7'
+cache:
+  yarn: true
+  directories:
+    - node_modules
+env:
+  global:
+  - CF_API=https://api.ng.bluemix.net/
+  - CF_USERNAME=jamesrauhut@gmail.com
+  - CF_ORG=jamesrauhut@gmail.com
+  - CF_SPACE=dev
+before_deploy:
+  - wget https://s3.amazonaws.com/go-cli/releases/v6.12.4/cf-cli_amd64.deb -qO temp.deb && sudo dpkg -i temp.deb
+  - rm temp.deb
+  - cf login -a ${CF_API} -u ${CF_USERNAME} -p ${BLUEMIX_PASSWORD} -o ${CF_ORG} -s ${CF_SPACE}
+  - cf install-plugin autopilot -r CF-Community
+  - yarn build
+deploy:
+  - edge: true
+    provider: script
+    script: if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then cf zero-downtime-push create-react-app-devops -f ./manifest.yml; else echo "PR skip deploy"; fi
+    skip_cleanup: true
+    on:
+      branch: master

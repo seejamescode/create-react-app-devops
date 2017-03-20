@@ -6,4 +6,4 @@ applications:
   disk_quota: 256MB
   memory: 128MB
   services:
-     - keys
+    - keys

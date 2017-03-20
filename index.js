@@ -1,6 +1,7 @@
 import compression from 'compression';
 import express from 'express';
 import fs from 'fs';
+import path from 'path';
 import request from 'request';
 
 const app = express();
@@ -8,8 +9,8 @@ const port = process.env.PORT || 8080;
 app.use(compression());
 
 let keys;
-if (fs.existsSync('./keys.json')) {
-  keys = require('./keys.json');
+if (fs.existsSync(path.join(__dirname, '/keys.json'))) {
+  keys = require(path.join(__dirname, '/keys.json'));
 } else {
   keys = JSON.parse(process.env.VCAP_SERVICES)['user-provided'][0].credentials;
 }

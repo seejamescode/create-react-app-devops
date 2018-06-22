@@ -3,14 +3,44 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "compression": "^1.7.2",
+    "express": "^4.16.3",
     "react": "^16.4.1",
+    "react-app-rewired": "^1.5.2",
     "react-dom": "^16.4.1",
     "react-scripts": "1.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "yarn dev",
+    "build": "yarn build:client && yarn build:server",
+    "build:client": "react-app-rewired build",
+    "build:server": "babel src/server -d build/server",
+    "dev": "concurrently \"yarn dev:server\" \"yarn dev:client\"",
+    "dev:client": "react-scripts start",
+    "dev:server": "DEV=true PORT=8081 babel-watch ./src/server/index.js",
+    "now-start": "node build/server/index.js",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "proxy": {
+    "/api": {
+      "target": "http://localhost:8081",
+      "pathRewrite": {
+        "^/proxy": ""
+      },
+      "changeOrigin": true
+    }
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ]
+  },
+  "devDependencies": {
+    "babel-watch": "^2.0.7",
+    "concurrently": "^3.6.0"
   }
 }

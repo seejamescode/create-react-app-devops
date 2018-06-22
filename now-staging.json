@@ -1,0 +1,13 @@
+{
+  "alias": ["create-react-app-devops-staging"],
+  "files": ["public", "src", "config-overrides.js", "now.json", "yarn.lock"],
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "scale": {
+    "sfo1": {
+      "min": 1,
+      "max": 1
+    }
+  }
+}

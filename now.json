@@ -2,7 +2,8 @@
   "alias": ["create-react-app-devops"],
   "files": ["public", "src", "config-overrides.js", "now.json", "yarn.lock"],
   "env": {
-    "NODE_ENV": "production"
+    "NODE_ENV": "production",
+    "githubAccessToken": "@github"
   },
   "scale": {
     "sfo1": {
